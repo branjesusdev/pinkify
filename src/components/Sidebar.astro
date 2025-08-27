@@ -1,0 +1,35 @@
+---
+import { XIcon } from "@lucide/astro";
+---
+
+<div
+  id="cart-sidebar"
+  class="fixed inset-y-0 right-0 z-50 w-96 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out"
+>
+
+<XIcon id="close-cart" class="absolute top-4 right-4 p-2 text-gray-600 hover:text-gray-900 w-12 h-12"/>
+</div>
+
+<script>
+  import { isCartOpen } from "@/store/cart";
+  import { $ } from "@/lib/dom-selector";
+
+  const sidebar = $("#cart-sidebar");
+  const closeButton = $("#close-cart");
+
+  isCartOpen.subscribe((open) => {
+
+    if (sidebar) {
+      if (open) {
+        sidebar.classList.remove("translate-x-full");
+      } else {
+        sidebar.classList.add("translate-x-full");
+      }
+    }
+  });
+
+  closeButton?.addEventListener("click", () => {
+    isCartOpen.set(false);
+  });
+
+</script>
