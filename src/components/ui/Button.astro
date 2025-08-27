@@ -1,0 +1,16 @@
+---
+interface Props {
+  type: "button" | "submit" | "reset";
+  class: string;
+  text: string;
+}
+
+const { class: className, text, type } = Astro.props;
+---
+
+<button
+  type={type}
+  class:list={[
+    `text-dark-magenta mb-4 text-center text-4xl font-light`,
+    className,
+  ]}>{text}</button>
