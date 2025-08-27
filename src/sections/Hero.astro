@@ -1,23 +1,39 @@
 ---
+import Button from "@/components/ui/Button.astro";
+
 
 ---
 
-<section class="relative flex min-h-[90dvh] w-full overflow-hidden">
-  <div class="mask-fade-bottom absolute inset-0 w-full bg-black opacity-10"></div>
+<section class="relative flex min-h-[60dvh] w-full overflow-hidden">
 
-  <img class="absolute w-[20rem] -right-14 -top-50 h-full object-contain -rotate-[210deg] animate-fade-in-down max-w-xl opacity-35" src="/images/hero3.png" alt="Maquillaje" />
+  <img class="absolute w-[20rem] -right-14 -top-50 h-full object-contain -rotate-[210deg] animate-fade-in-down max-w-xl opacity-35 " src="/images/hero3.png" alt="Maquillaje" />
 
   <div class="flex w-full flex-col gap-5 p-8 text-primary justify-center">
-    <h1 class="max-w-[10ch] text-4xl  font-bold">
+    <h1 class="max-w-[10ch] text-5xl  font-bold">
       WE LOVE MAKEUP
     </h1>
-    <p class="text-base max-w-[20ch]">
+    <p class="text-lg max-w-[20ch]">
       Compra online y recibe en casa
     </p>
 
-    <button class="bg-[var(--color-theme-secondary)]  text-black py-2 px-4 rounded w-[fit-content] font-bold">
+    <Button server:defer type="button" variant="primary">
       WhatsApp
-    </button>
+    </Button>
+
+    <div class="mt-5 flex flex-wrap gap-2 justify-center">
+      <Button server:defer type="button" variant="secondary">
+        Pestañas
+      </Button>
+      <Button server:defer type="button" variant="secondary">
+        Ojos
+      </Button>
+      <Button server:defer type="button" variant="secondary">
+        Labios
+      </Button>
+      <Button server:defer type="button" variant="secondary">
+        Rostro
+      </Button>
+    </div>
   </div>
 </section>
 

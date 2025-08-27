@@ -1,16 +1,19 @@
 ---
 interface Props {
   type: "button" | "submit" | "reset";
-  class: string;
-  text: string;
+  variant?: "primary" | "secondary";
+  class?: string;
 }
 
-const { class: className, text, type } = Astro.props;
+const { class: className, type, variant = "primary" } = Astro.props;
 ---
 
 <button
   type={type}
   class:list={[
-    `text-dark-magenta mb-4 text-center text-4xl font-light`,
+    ` rounded w-[fit-content] font-bold cursor-pointer`,
     className,
-  ]}>{text}</button>
+    variant === "primary" ? "py-2 px-4 bg-[var(--color-theme-primary)] text-black " : "py-1 px-3 text-primary bg-[#212121] fill-neutral-50 border-1 border-white/30 rounded-2xl",
+  ]}>
+  <slot />  
+</button>
