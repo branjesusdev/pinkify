@@ -3,7 +3,7 @@
         {
             "id": 1,
             "name": "test",
-            "price": 100,
+            "price": 10000,
             "image": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
             "description": "Description for Product 1",
             "video": "https://via.placeholder.com/150",
@@ -12,7 +12,7 @@
         {
             "id": 2,
             "name": "Product 2",
-            "price": 200,
+            "price": 20000,
             "image": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
             "description": "Description for Product 2",
             "video": "https://via.placeholder.com/150",
@@ -21,7 +21,7 @@
         {
             "id": 3,
             "name": "Product 3",
-            "price": 300,
+            "price": 15000,
             "image": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
             "description": "Description for Product 2",
             "video": "https://via.placeholder.com/150",

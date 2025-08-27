@@ -1,3 +1,4 @@
+import { getAmountFormatted } from "@/lib/utils";
 import Button from "./ui/Button";
 
 type CardProps = {
@@ -18,7 +19,7 @@ export default function Card({ title, amount, image, handleAddToCart }: CardProp
       </a>
       <div class="px-5 py-3 flex gap-3 flex-col">
         <h5 class="text-lg font-bold tracking-tight text-gray-900">{title}</h5>
-        <span class="text-3xl font-bold text-gray-900">${amount}</span>
+        <span class="text-3xl font-bold text-gray-900">{getAmountFormatted(amount)}</span>
         <Button
           onclick={handleAddToCart}
           type="button"

@@ -1,6 +1,9 @@
 ---
 import { XIcon } from "@lucide/astro";
 import CartItem from "@/components/CartItem";
+import CartSummary from "@/components/CartSummary";
+import CartButton from "@/components/CartButton";
+
 ---
 
 <aside
@@ -14,6 +17,9 @@ import CartItem from "@/components/CartItem";
   <div class="p-6">
       <h2 class="text-2xl font-bold mb-4 text-white">Carrito</h2>
       <CartItem client:only="solid"/>
+      <hr class="border-[#23262d] my-4"></hr>
+      <CartSummary client:only="solid"/>
+      <CartButton client:only="solid"/>
   </div>
   
 </aside>

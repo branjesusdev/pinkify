@@ -2,6 +2,7 @@ import { cart, incrementQuantity, decrementQuantity } from "@/store/cart";
 import { useStore } from "@nanostores/solid";
 import type { CartItem } from "@/types/cart-item";
 import { createAutoAnimate  } from '@formkit/auto-animate/solid'
+import { getAmountFormatted } from "@/lib/utils";
 
 
 type Props = {};
@@ -54,7 +55,7 @@ export default function CartItem() {
               </button>
             </div>
           </div>
-          <span class="text-white">${item.price}</span>
+          <span class="text-white">{getAmountFormatted(item.totalAmount)}</span>
         </li>
       )) ?? ""}
     </ul>

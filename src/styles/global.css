@@ -16,7 +16,7 @@
   --color-theme-primary: #E6D4C8;
   --color-theme-secondary: #E4B3C7   ;
   --color-theme-accent: #FCF0E6;
-  --color-theme-background: #0F0F0F;
+  --color-theme-background: #17191E;
   --color-theme-overlay: #343841;
 
 }
@@ -137,7 +137,6 @@
 
 html {
   font-family: 'NunitoSans', var(--font-fallback);
-  text-transform: uppercase;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

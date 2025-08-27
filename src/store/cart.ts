@@ -1,4 +1,4 @@
-import { atom, onMount } from 'nanostores';
+import { atom, computed, onMount } from 'nanostores';
 import type { CartItem } from '@/types/cart-item';
 import { persistentAtom } from '@nanostores/persistent';
 
@@ -11,7 +11,7 @@ export const isSidebarOpen = atom<boolean>(false);
 
 
 // ... funciones addToCart, removeFromCart, clearCart, toggleSidebar
-export const addToCart = (product: Omit<CartItem, 'quantity'>) => {
+export const addToCart = (product: Omit<CartItem, 'quantity' | 'totalAmount'>) => {
   const currentCart = cart.get();
   const existingItem = currentCart.find(item => item.id === product.id);
 
@@ -19,12 +19,12 @@ export const addToCart = (product: Omit<CartItem, 'quantity'>) => {
     cart.set(
       currentCart.map(item =>
         item.id === product.id
-          ? { ...item, quantity: item.quantity + 1, price: item.price * (item.quantity + 1) }
+          ? { ...item, quantity: item.quantity + 1, totalAmount: item.price * (item.quantity + 1) }
           : item
       )
     );
   } else {
-    cart.set([...currentCart, { ...product, quantity: 1 }]);
+    cart.set([...currentCart, { ...product, quantity: 1, totalAmount: product.price }]);
   }
 };
 
@@ -37,7 +37,7 @@ export const incrementQuantity = (productId: number) => {
 
   cart.set(
     currentCart.map(item =>
-      item.id === productId ? { ...item, quantity: item.quantity + 1, price: item.price * (item.quantity + 1) } : item
+      item.id === productId ? { ...item, quantity: item.quantity + 1, totalAmount: item.price * (item.quantity + 1) } : item
     )
   );
 };
@@ -58,7 +58,7 @@ export const decrementQuantity = (productId: number) => {
 
     cart.set(
       currentCart.map(item =>
-        item.id === productId ? { ...item, quantity: item.quantity - 1, price: item.price / item.quantity } : item
+        item.id === productId ? { ...item, quantity: item.quantity - 1, totalAmount: item.price * (item.quantity - 1) } : item
       )
     );
   }
@@ -71,6 +71,15 @@ export const removeFromCart = (productId: number) => {
 
 export const clearCart = () => {
   cart.set([]);
+};
+
+export const cartTotal = computed(cart, (currentCart) =>
+  currentCart.reduce((total, item) => total + item.totalAmount, 0)
+);
+
+export const getCartItemCount = () => {
+  const currentCart = cart.get();
+  return currentCart.length;
 };
 
 export const toggleSidebar = () => {
