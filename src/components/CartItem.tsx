@@ -21,7 +21,7 @@ export default function CartItem() {
 
   return (
     <ul class="mt-4 parent" ref={animationParent}>
-      <p class="text-white text-[14px] mb-2">Tienes <strong class="text-green-500">{$cart().length}</strong> productos en tu carrito.</p>
+      <h3 class="text-white mb-2">Tienes <strong class="text-green-500">{$cart().length}</strong> productos en tu carrito.</h3>
       {$cart()?.map((item) => (
         <li class="flex gap-3 items-center justify-between py-2">
           <img
@@ -38,9 +38,7 @@ export default function CartItem() {
                 onClick={() => handleDecrement(item)}
               >
                 <span class="sr-only">Decrement</span>
-                <svg fill="#000" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M19 11H5v2h14v-2Z"></path>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus"><path d="M5 12h14"/></svg>
               </button>
               <span class="text-white/90 text-[14px]"> {item.quantity}</span>
               <button
@@ -49,9 +47,7 @@ export default function CartItem() {
                 onClick={() => handleIncrement(item)}
               >
                 <span class="sr-only">Increment</span>
-                <svg fill="#000" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2Z"></path>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
               </button>
             </div>
           </div>
