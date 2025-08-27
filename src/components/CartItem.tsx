@@ -37,7 +37,7 @@ export default function CartItem() {
                 onClick={() => handleDecrement(item)}
               >
                 <span class="sr-only">Decrement</span>
-                <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg fill="#000" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M19 11H5v2h14v-2Z"></path>
                 </svg>
               </button>
@@ -48,7 +48,7 @@ export default function CartItem() {
                 onClick={() => handleIncrement(item)}
               >
                 <span class="sr-only">Increment</span>
-                <svg fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg fill="#000" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6v-2Z"></path>
                 </svg>
               </button>
