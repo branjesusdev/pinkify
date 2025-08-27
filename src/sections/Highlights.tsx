@@ -18,7 +18,7 @@ export default function Highlights() {
   };
 
   return (
-    <section class="relative flex flex-wrap gap-2 min-h-[90dvh] w-full overflow-hidden justify-center">
+    <section class="relative flex flex-wrap gap-2 min-h-[90dvh] w-full overflow-hidden justify-center pb-10">
       {$products().map((product) => (
         <Card
           title={product.name}
