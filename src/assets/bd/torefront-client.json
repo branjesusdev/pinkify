@@ -1,0 +1,31 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "test",
+            "price": 100,
+            "image": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+            "description": "Description for Product 1",
+            "video": "https://via.placeholder.com/150",
+            "categoryId": 1
+        },
+        {
+            "id": 2,
+            "name": "Product 2",
+            "price": 200,
+            "image": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+            "description": "Description for Product 2",
+            "video": "https://via.placeholder.com/150",
+            "categoryId": 2
+        },
+        {
+            "id": 3,
+            "name": "Product 3",
+            "price": 300,
+            "image": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+            "description": "Description for Product 2",
+            "video": "https://via.placeholder.com/150",
+            "categoryId": 2
+        }
+    ]
+}

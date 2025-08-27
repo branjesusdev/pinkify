@@ -2,7 +2,7 @@
 import Hero from '@/sections/Hero.astro';
 import Header from '@/sections/Header.astro';
 import Layout from '../layouts/Layout.astro';
-import Highlights from '@/sections/Highlights.astro';
+import Highlights from '@/sections/Highlights';
 
 export const prerender = true
 ---
@@ -10,5 +10,5 @@ export const prerender = true
 <Layout>
 	<Header />
 	<Hero />
-	<Highlights />
+	<Highlights client:load />
 </Layout>

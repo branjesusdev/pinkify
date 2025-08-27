@@ -1,5 +1,6 @@
 ---
-import Sidebar from "@/components/Sidebar.astro";
+import Sidebar from "@/components/SidebarCart.astro";
+export const prerender = true
 ---
 
 <nav
@@ -27,13 +28,13 @@ import Sidebar from "@/components/Sidebar.astro";
 <Sidebar />
 
 <script >
-  import { toggleCart } from "@/store/cart";
+  import { toggleSidebar } from "@/store/cart";
   import { $ } from "@/lib/dom-selector";
 
   const cartButton = $("#cart-button");
 
   cartButton?.addEventListener("click", () => {
     console.log("Cart button clicked");
-    toggleCart();
+    toggleSidebar();
   });
 </script>

@@ -1,0 +1,44 @@
+---
+import { XIcon } from "@lucide/astro";
+import CartItem from "@/components/CartItem";
+---
+
+<aside
+  id="cart-sidebar"
+  class="fixed inset-y-0 right-0 z-50 w-96 bg-[var(--color-theme-background)]  shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out"
+>
+  <button id="close-cart" type="button" class="absolute top-4 right-4 p-1 bg-[var(--color-theme-overlay)] rounded-sm ">
+    <XIcon class="text-white w-6 h-6" />
+  </button>
+
+  <div class="p-6">
+      <h2 class="text-2xl font-bold mb-4 text-white">Carrito</h2>
+      <CartItem client:only="solid"/>
+  </div>
+  
+</aside>
+
+<script>
+  import { toggleSidebar, isSidebarOpen } from "@/store/cart";
+  import { $ } from "@/lib/dom-selector";
+
+  const sidebar = $("#cart-sidebar");
+  const closeButton = $("#close-cart");
+
+  isSidebarOpen.subscribe((open) => {
+    console.log("Sidebar is now", open ? "open" : "closed");
+
+    if (sidebar) {
+      if (open) {
+        sidebar.classList.remove("translate-x-full");
+      } else {
+        sidebar.classList.add("translate-x-full");
+      }
+    }
+  });
+
+  closeButton?.addEventListener("click", () => {
+    console.log("Close button clicked");
+    toggleSidebar();
+  });
+</script>
