@@ -11,19 +11,19 @@ type CardProps = {
 
 export default function Card({ title, amount, image, handleAddToCart }: CardProps) {
   return (
-    <div class="min-w-[9rem] max-w-[12rem] bg-[var(--color-theme-accent)] border rounded-lg shadow-sm h-fit">
+    <div class="flex-[1_1_40%] sm:flex-[1_1_48%] lg:flex-[1_1_18%]  min-w-[9rem] max-w-full lg:max-w-[24rem] bg-[var(--color-theme-accent)] border rounded-lg shadow-sm h-fit">
       <a href="#">
-        <div class="overflow-hidden rounded-t-lg w-full h-48">
-          <img class=" object-cover w-full h-full" src={image} alt={title} />
+        <div class="overflow-hidden rounded-t-lg w-full h-48 lg:h-60">
+          <img class=" object-cover w-full h-full mask-b-from-44 " src={image} alt={title} />
         </div>
       </a>
-      <div class="px-5 py-3 flex gap-3 flex-col">
+      <div class="px-4 py-2 flex gap-2 flex-col">
         <h5 class="text-lg font-bold tracking-tight text-gray-900">{title}</h5>
         <span class="text-3xl font-bold text-gray-900">{getAmountFormatted(amount)}</span>
         <Button
           onclick={handleAddToCart}
           type="button"
-          class="font-bold flex gap-2 items-center justify-center"
+          class="font-bold flex gap-2 items-center justify-center w-full"
         >
           Agregar
           <svg

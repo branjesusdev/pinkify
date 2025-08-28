@@ -32,7 +32,6 @@
     /* Disable overscroll behavior */
     overscroll-behavior: none;
     overscroll-behavior-y: none;
-    overflow-x: hidden;
   }
 
   html {

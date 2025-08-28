@@ -30,20 +30,20 @@ export default function CartItem() {
             class="w-14 h-14 object-cover rounded-sm"
           />
           <div class=" w-full flex flex-col">
-            <span class="text-white">{item.name}</span>
+            <span class="text-white text-lg">{item.name}</span>
             <div class="flex gap-3">
               <button
                 type="button"
-                class="bg-white rounded-sm p-1 flex h-6 w-6 items-center justify-center text-black"
+                class="bg-white rounded-sm p-1 flex h-7 w-7 items-center justify-center text-black"
                 onClick={() => handleDecrement(item)}
               >
                 <span class="sr-only">Decrement</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus"><path d="M5 12h14"/></svg>
               </button>
-              <span class="text-white/90 text-[14px]"> {item.quantity}</span>
+              <span class="text-white/90 text-lg"> {item.quantity}</span>
               <button
                 type="button"
-                class="bg-white rounded-sm p-1 flex h-6 w-6 items-center justify-center text-black"
+                class="bg-white rounded-sm p-1 flex h-7 w-7 items-center justify-center text-black"
                 onClick={() => handleIncrement(item)}
               >
                 <span class="sr-only">Increment</span>

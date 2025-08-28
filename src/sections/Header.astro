@@ -1,34 +1,23 @@
 ---
 import Sidebar from "@/components/SidebarCart.astro";
+import { ShoppingCart, Venus } from '@lucide/astro'
 export const prerender = true
 ---
 
 <nav
-  class="w-full h-14 flex items-center justify-between px-8 gap-4 shadow-md sticky top-0"
+  class="w-full h-14 flex items-center justify-between px-6 lg:px-32 xl:px-64 gap-4 shadow-md fixed left-0 top-0 z-50 transition-colors bg-black/70 backdrop-blur-md"
 >
-  <img src="/images/logo.png" alt="Logo" class="h-16 w-16 object-contain" />
-  <button id="cart-button" class="cursor-pointer">
-    <svg
-      class="text-primary w-7 h-7"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-shopping-cart-icon lucide-shopping-cart"
-      ><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"
-      ></circle><path
-        d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"
-      ></path></svg
-    >
+  <Venus class="text-primary w-9 h-9 text-secondary" stroke-width="2" />
+  <button id="cart-button" class="cursor-pointer relative">
+    <ShoppingCart class="text-primary w-9 h-9" />
+      <span id="cart-count" class="bg-red-500 text-white rounded-full px-2 py-1 text-xs font-bold absolute -top-1 -right-1"></span>
   </button>
 </nav>
 
 <Sidebar />
 
 <script >
-  import { toggleSidebar } from "@/store/cart";
+  import { toggleSidebar, cartTotalItems } from "@/store/cart";
   import { $ } from "@/lib/dom-selector";
 
   const cartButton = $("#cart-button");
@@ -37,4 +26,13 @@ export const prerender = true
     console.log("Cart button clicked");
     toggleSidebar();
   });
+
+  cartTotalItems.subscribe((count) => {
+    const cartCount = $("#cart-count");
+    if (cartCount) {
+      cartCount.textContent = count.toString();
+      cartCount.style.display = count > 0 ? "block" : "none";
+    }
+  });
+
 </script>

@@ -77,6 +77,10 @@ export const cartTotal = computed(cart, (currentCart) =>
   currentCart.reduce((total, item) => total + item.totalAmount, 0)
 );
 
+export const cartTotalItems = computed(cart, (currentCart) =>
+  currentCart.length
+);
+
 export const getCartItemCount = () => {
   const currentCart = cart.get();
   return currentCart.length;
