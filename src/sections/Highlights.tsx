@@ -2,9 +2,9 @@ import { createEffect } from "solid-js";
 import { useStore } from "@nanostores/solid";
 
 import type { Product } from "@/types/product";
-import Card from "@/components/ProductCart";
+import ProductCart from "@/components/ProductCart";
 import { fetchProducts, products } from "@/store/products";
-import { addToCart, toggleSidebar } from '@/store/cart';
+import { addToCart, toggleSidebar } from "@/store/cart";
 
 export default function Highlights() {
   const $products = useStore(products);
@@ -18,16 +18,28 @@ export default function Highlights() {
   };
 
   return (
-    <section class="relative flex flex-wrap gap-2 min-h-[90dvh] w-full overflow-hidden justify-center pb-10">
-      {$products().map((product) => (
-        <Card
-          title={product.name}
-          amount={product.price}
-          image={product.image}
-          type="featured"
-          handleAddToCart={() => handleAddToCart(product)}
-        />
-      ))}
+    <section class="relative flex flex-wrap gap-2 min-h-[90dvh] w-full overflow-hidden justify-center py-10">
+      {$products().length === 0 &&
+        Array.from({ length: 4 }).map((_, i) => (
+          <ProductCart
+            title=""
+            amount={0}
+            image=""
+            type="featured"
+            isSkeleton={true}
+          />
+        ))}
+
+      {$products().length > 0 &&
+        $products().map((product) => (
+          <ProductCart
+            title={product.name}
+            amount={product.price}
+            image={product.image}
+            type="featured"
+            handleAddToCart={() => handleAddToCart(product)}
+          />
+        ))}
     </section>
   );
 }

@@ -4,6 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import vercel from '@astrojs/vercel'
 import solid from '@astrojs/solid-js';
 
+
 // https://astro.build/config
 export default defineConfig({
     output: 'server',

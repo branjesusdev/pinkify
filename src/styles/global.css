@@ -1,24 +1,22 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin "@midudev/tailwind-animations";
-
 
 @theme {
   --color-dark-magenta: #2a1f26;
-  --font-fallback:
-    'Adjusted Arial Fallback', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI',
-    'Noto Sans', helvetica, arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-  --font-primary: 'Anisette';
+  --font-fallback: "Adjusted Arial Fallback", system-ui, -apple-system,
+    blinkmacsystemfont, "Segoe UI", "Noto Sans", helvetica, arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  --font-primary: "Anisette";
 
   /* Velada V Custom Colors */
   --color-theme-french-mauve: oklch(67.65% 0.1539 329.18);
   --color-theme-raisin-black: oklch(25.53% 0.0209 340.25);
-  --color-theme-tickle-me-pink: #7c3aed;
-  --color-theme-primary: #E6D4C8;
-  --color-theme-secondary: #E4B3C7   ;
-  --color-theme-accent: #FCF0E6;
-  --color-theme-background: #17191E;
+  --color-theme-tickle-me-pink: #ff6b9d;
+  --color-theme-primary: #e6d4c8;
+  --color-theme-secondary: #e4b3c7;
+  --color-theme-accent: #fcf0e6;
+  --color-theme-background: #17191e;
   --color-theme-overlay: #343841;
-
 }
 
 @layer base {
@@ -65,13 +63,13 @@
 
   /* Firefox */
   * {
-    scrollbar-color: var(--color-theme-french-mauve) var(--color-theme-raisin-black);
+    scrollbar-color: var(--color-theme-french-mauve)
+      var(--color-theme-raisin-black);
     scrollbar-width: thin;
   }
 }
 
 @layer utilities {
-  
   .text-primary {
     color: var(--color-theme-primary);
   }
@@ -109,10 +107,17 @@
       height: 100vh;
     }
   }
+
+  .neon-text {
+    background: linear-gradient(135deg, #fff 0%, var(--color-theme-tickle-me-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 @font-face {
-  font-family: 'Adjusted Arial Fallback';
+  font-family: "Adjusted Arial Fallback";
   src: local(Arial);
   size-adjust: 112%;
   ascent-override: 74%;
@@ -121,21 +126,21 @@
 }
 
 @font-face {
-  font-family: 'NunitoSans';
-  src: url('/fonts/NunitoSans-Regular.woff2') format('woff2');
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans-Regular.woff2") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'NunitoSans';
-  src: url('/fonts/NunitoSans-Bold.woff2') format('woff2');
+  font-family: "NunitoSans";
+  src: url("/fonts/NunitoSans-Bold.woff2") format("woff2");
   font-weight: 600;
   font-display: swap;
 }
 
 html {
-  font-family: 'NunitoSans', var(--font-fallback);
+  font-family: "NunitoSans", var(--font-fallback);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -150,14 +155,27 @@ html {
 }
 
 @utility radial-gradient-pink {
-  
-  background: radial-gradient(ellipse 120% 80% at 70% 20%, rgba(255, 20, 147, 0.15), transparent 50%),
-          radial-gradient(ellipse 100% 60% at 30% 10%, rgba(0, 255, 255, 0.12), transparent 60%),
-          radial-gradient(ellipse 90% 70% at 50% 0%, rgba(138, 43, 226, 0.18), transparent 65%),
-          radial-gradient(ellipse 110% 50% at 80% 30%, rgba(255, 215, 0, 0.08), transparent 40%),
-          #000000
+  background: radial-gradient(
+      ellipse 120% 80% at 70% 20%,
+      rgba(255, 20, 147, 0.15),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 100% 60% at 30% 10%,
+      rgba(0, 255, 255, 0.12),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 90% 70% at 50% 0%,
+      rgba(138, 43, 226, 0.18),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 110% 50% at 80% 30%,
+      rgba(255, 215, 0, 0.08),
+      transparent 40%
+    ),
+    #000000;
 
   /* background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(236, 72, 153, 0.25), transparent 70%), var(--color-theme-background); */
-
-
 }

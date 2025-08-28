@@ -4,7 +4,6 @@ import type { CartItem } from "@/types/cart-item";
 import { createAutoAnimate  } from '@formkit/auto-animate/solid'
 import { getAmountFormatted } from "@/lib/utils";
 
-
 type Props = {};
 
 export default function CartItem() {

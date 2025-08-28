@@ -1,38 +1,36 @@
 ---
 import Button from "@/components/ui/Button";
-
-
+import { Image } from "astro:assets";
 ---
 
-<section class="relative flex min-h-[90dvh] w-full overflow-hidden">
+<section class="relative flex min-h-[90dvh] w-full overflow-hidden pt-28">
+  <Image
+    class="absolute w-[20rem] lg:w-[50rem] -right-14 -top-32 sm:-top-48 lg:-top-32 h-full object-contain -rotate-[210deg] animate-fade-in-down max-w-xl opacity-90 z-10"
+    src="/images/hero3.png"
+    alt="Maquillaje"
+    width={512}
+    height={512}
+    inferSize
+    priority
+  />
 
-    <img class="absolute w-[20rem] lg:w-[50rem] -right-14 -top-36 h-full object-contain -rotate-[210deg] animate-fade-in-down max-w-xl opacity-90 z-10" src="/images/hero3.png" alt="Maquillaje" />
-
-  <div class="flex w-full flex-col gap-5 lg:gap-8 text-primary justify-center z-20">
-    <h1 class="max-w-[10ch] lg:max-w-full text-5xl lg:text-7xl font-bold backdrop-blur-xs rounded-lg">
+  <div
+    class="flex w-full flex-col gap-8 lg:gap-10 text-primary justify-center z-20"
+  >
+    <h1
+      class="max-w-[10ch] lg:w-auto text-5xl lg:text-7xl xl:text-9xl font-bold backdrop-blur-xs rounded-lg neon-text"
+    >
       WE LOVE MAKEUP
     </h1>
     <p class="text-lg max-w-[20ch] lg:max-w-[30ch] lg:text-3xl">
-      Compra online y recibe en casa
+      Descubre productos de belleza de alta calidad para realzar tu belleza natural
     </p>
 
-    <Button server:defer type="button" variant="primary">
-      WhatsApp
-    </Button>
-
-    <div class="mt-10 flex flex-wrap gap-2 justify-center">
-      <Button server:defer type="button" variant="secondary">
-        Pestañas
-      </Button>
-      <Button server:defer type="button" variant="secondary">
-        Ojos
-      </Button>
-      <Button server:defer type="button" variant="secondary">
-        Labios
-      </Button>
-      <Button server:defer type="button" variant="secondary">
-        Rostro
-      </Button>
+    <div class="mt-10 flex flex-wrap gap-4 justify-center [&>button]:min-w-[150px]">
+      <Button server:defer type="button" variant="primary" size="lg"> Pestañas </Button>
+      <Button server:defer type="button" variant="primary" size="lg"> Ojos </Button>
+      <Button server:defer type="button" variant="primary" size="lg"> Labios </Button>
+      <Button server:defer type="button" variant="primary" size="lg"> Rostro </Button>
     </div>
   </div>
 </section>
