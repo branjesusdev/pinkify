@@ -11,7 +11,8 @@ import { Image } from "astro:assets";
     width={512}
     height={512}
     inferSize
-    priority
+    loading="lazy"
+    decoding="async"
   />
 
   <div
@@ -27,10 +28,10 @@ import { Image } from "astro:assets";
     </p>
 
     <div class="mt-10 flex flex-wrap gap-4 justify-center [&>button]:min-w-[150px]">
-      <Button server:defer type="button" variant="primary" size="lg"> Pestañas </Button>
-      <Button server:defer type="button" variant="primary" size="lg"> Ojos </Button>
-      <Button server:defer type="button" variant="primary" size="lg"> Labios </Button>
-      <Button server:defer type="button" variant="primary" size="lg"> Rostro </Button>
+      <Button aria-label="Pestañas" server:defer type="button" variant="primary" size="lg"> Pestañas </Button>
+      <Button aria-label="Ojos" server:defer type="button" variant="primary" size="lg"> Ojos </Button>
+      <Button aria-label="Labios" server:defer type="button" variant="primary" size="lg"> Labios </Button>
+      <Button aria-label="Rostro" server:defer type="button" variant="primary" size="lg"> Rostro </Button>
     </div>
   </div>
 </section>

@@ -41,12 +41,12 @@ export default function ProductCart({
             </div>
           </a>
           <div class="px-4 py-2 flex gap-2 flex-col">
-            <h5 class="text-lg font-bold tracking-tight text-gray-900">
+            <h2 class="text-lg font-bold tracking-tight text-gray-900">
               {title}
-            </h5>
-            <span class="text-3xl font-bold text-gray-900">
+            </h2>
+            <h1 class="text-3xl font-bold text-gray-900">
               {getAmountFormatted(amount)}
-            </span>
+            </h1>
             <Button
               onclick={handleAddToCart}
               type="button"
