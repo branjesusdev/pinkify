@@ -32,6 +32,7 @@ export default function CartItem() {
             <span class="text-white text-lg">{item.name}</span>
             <div class="flex gap-3">
               <button
+                aria-label="Decrement"
                 type="button"
                 class="bg-white rounded-sm p-1 flex h-7 w-7 items-center justify-center text-black"
                 onClick={() => handleDecrement(item)}
@@ -41,6 +42,7 @@ export default function CartItem() {
               </button>
               <span class="text-white/90 text-lg"> {item.quantity}</span>
               <button
+                aria-label="Increment"
                 type="button"
                 class="bg-white rounded-sm p-1 flex h-7 w-7 items-center justify-center text-black"
                 onClick={() => handleIncrement(item)}
@@ -56,3 +58,5 @@ export default function CartItem() {
     </ul>
   );
 }
+
+// si completo el carrito de compras, muestro un mensaje de agradecimiento

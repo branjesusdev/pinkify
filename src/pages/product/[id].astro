@@ -1,0 +1,11 @@
+---
+import Layout from "@/layouts/Layout.astro"
+
+const { id } = Astro.params
+if (!id) return Astro.redirect('/404')
+---
+
+<Layout title="Producto" description="Detalles del producto" >
+    
+  <h1 class="text-3xl font-bold text-center mt-10 text-white z-10">Detalles del Producto {id}</h1>  
+</Layout>

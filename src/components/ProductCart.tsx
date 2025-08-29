@@ -2,6 +2,7 @@ import { getAmountFormatted } from "@/lib/utils";
 import Button from "./ui/Button";
 
 type CardProps = {
+  id: number;
   title: string;
   amount: number;
   image: string;
@@ -15,6 +16,7 @@ export default function ProductCart({
   amount,
   image,
   handleAddToCart,
+  id = 0,
   isSkeleton,
 }: CardProps) {
   return (
@@ -28,8 +30,14 @@ export default function ProductCart({
           </div>
         </div>
       ) : (
-        <div class="flex-[1_1_40%] sm:flex-[1_1_48%] lg:flex-[1_1_18%]  min-w-[9rem] max-w-full lg:max-w-[24rem] bg-[var(--color-theme-accent)] border rounded-lg shadow-sm h-fit">
-          <a href="#">
+        <div
+          class="flex-[1_1_40%] sm:flex-[1_1_48%] lg:flex-[1_1_18%]  min-w-[9rem] max-w-full lg:max-w-[24rem] bg-[var(--color-theme-accent)] border rounded-lg shadow-sm h-fit"
+        >
+          <a
+            href={`/product/${id}`}
+            aria-label={`Ver detalles de ${title}`}
+            data-product-id={id}
+          >
             <div class="overflow-hidden rounded-t-lg w-full h-48 lg:h-60">
               <img
                 class=" object-cover w-full h-full mask-b-from-44 aspect-[4/3]"
@@ -48,6 +56,7 @@ export default function ProductCart({
               {getAmountFormatted(amount)}
             </h1>
             <Button
+              aria-label="Agregar producto"
               onclick={handleAddToCart}
               type="button"
               class="font-bold flex gap-2 items-center justify-center w-full"

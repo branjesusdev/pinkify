@@ -18,10 +18,11 @@ export default function Highlights() {
   };
 
   return (
-    <section class="relative flex flex-wrap gap-2 min-h-[90dvh] w-full overflow-hidden justify-center py-10">
+    <section class="relative flex flex-wrap gap-2 min-h-[90dvh] w-full overflow-hidden justify-center py-10 ">
       {$products().length === 0 &&
         Array.from({ length: 4 }).map((_, i) => (
           <ProductCart
+            id={0}
             title=""
             amount={0}
             image=""
@@ -33,6 +34,7 @@ export default function Highlights() {
       {$products().length > 0 &&
         $products().map((product) => (
           <ProductCart
+            id={product.id}
             title={product.name}
             amount={product.price}
             image={product.image}

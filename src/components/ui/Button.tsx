@@ -25,7 +25,7 @@ export default function Button({
           ? "py-2 px-4 bg-[var(--color-theme-secondary)] text-black/90 hover:bg-[var(--color-theme-secondary]/90"
           : "py-2 px-3 text-primary bg-[#212121] fill-neutral-50 border-1 border-white/30",
         size === "sm"
-          ? "text-sm py-2 px-4"
+          ? "text-sm py-1 px-3"
           : size === "lg"
           ? "text-lg py-3 px-5"
           : "text-base py-2 px-4",
