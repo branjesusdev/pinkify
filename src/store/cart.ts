@@ -10,12 +10,6 @@ export const cart = persistentAtom<CartItem[]>("cart", [], {
 });
 export const isSidebarOpen = atom<boolean>(false);
 
-onMount(cart, () => {
-  cart.get();
-});
-onMount(isSidebarOpen, () => {
-  isSidebarOpen.get();
-});
 
 export const addToCart = (product: Omit<CartItem, 'quantity' | 'totalAmount'>) => {
   const currentCart = cart.get();

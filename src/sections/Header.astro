@@ -1,8 +1,8 @@
 ---
 import Sidebar from "@/components/SidebarCart.astro";
-import { ShoppingCart } from '@lucide/astro'
-import { Image } from 'astro:assets'
-export const prerender = true
+import { ShoppingCart } from "@lucide/astro";
+import { Image } from "astro:assets";
+export const prerender = true;
 ---
 
 <nav
@@ -17,31 +17,39 @@ export const prerender = true
     inferSize
     priority
   />
-  <button id="cart-button" class="cursor-pointer relative" aria-label="Open cart sidebar">
+  <button
+    id="cart-button"
+    class="cursor-pointer relative"
+    aria-label="Open cart sidebar"
+  >
     <ShoppingCart class="text-primary w-8 h-8" />
-      <span id="cart-count" class="bg-red-500 text-white rounded-full px-2 py-1 text-xs font-bold absolute -top-2 -right-2"></span>
+    <span
+      id="cart-count"
+      class="bg-red-500 text-white rounded-full px-2 py-1 text-xs font-bold absolute -top-2 -right-2"
+    ></span>
   </button>
 </nav>
 
 <Sidebar />
 
-<script >
+<script>
   import { toggleSidebar, cartTotalItems } from "@/store/cart";
   import { $ } from "@/lib/dom-selector";
 
-  const cartButton = $("#cart-button");
+  document.addEventListener("astro:page-load", () => {
+    const cartButton = $("#cart-button");
 
-  cartButton?.addEventListener("click", () => {
-    console.log("Cart button clicked");
-    toggleSidebar();
+    cartButton?.addEventListener("click", () => {
+      console.log("Cart button clicked");
+      toggleSidebar();
+    });
+
+    cartTotalItems.subscribe((count) => {
+      const cartCount = $("#cart-count");
+      if (cartCount) {
+        cartCount.textContent = count.toString();
+        cartCount.style.display = count > 0 ? "block" : "none";
+      }
+    });
   });
-
-  cartTotalItems.subscribe((count) => {
-    const cartCount = $("#cart-count");
-    if (cartCount) {
-      cartCount.textContent = count.toString();
-      cartCount.style.display = count > 0 ? "block" : "none";
-    }
-  });
-
 </script>

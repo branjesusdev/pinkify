@@ -31,20 +31,22 @@ import CartButton from "@/components/CartButton";
   import { toggleSidebar, isSidebarOpen } from "@/store/cart";
   import { $ } from "@/lib/dom-selector";
 
-  const sidebar = $("#cart-sidebar");
-  const closeButton = $("#close-cart");
+  document.addEventListener("astro:page-load", () => {
+    const sidebar = $("#cart-sidebar");
+    const closeButton = $("#close-cart");
 
-  isSidebarOpen.subscribe((open) => {
-    if (sidebar) {
-      if (open) {
-        sidebar.classList.remove("translate-x-full");
-      } else {
-        sidebar.classList.add("translate-x-full");
+    isSidebarOpen.subscribe((open) => {
+      if (sidebar) {
+        if (open) {
+          sidebar.classList.remove("translate-x-full");
+        } else {
+          sidebar.classList.add("translate-x-full");
+        }
       }
-    }
-  });
+    });
 
-  closeButton?.addEventListener("click", () => {
-    toggleSidebar();
+    closeButton?.addEventListener("click", () => {
+      toggleSidebar();
+    });
   });
 </script>
