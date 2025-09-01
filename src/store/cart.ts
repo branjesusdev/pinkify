@@ -3,14 +3,20 @@ import type { CartItem } from '@/types/cart-item';
 import { persistentAtom } from '@nanostores/persistent';
 
 
+
 export const cart = persistentAtom<CartItem[]>("cart", [], {
   encode: JSON.stringify,
   decode: JSON.parse,
 });
 export const isSidebarOpen = atom<boolean>(false);
 
+onMount(cart, () => {
+  cart.get();
+});
+onMount(isSidebarOpen, () => {
+  isSidebarOpen.get();
+});
 
-// ... funciones addToCart, removeFromCart, clearCart, toggleSidebar
 export const addToCart = (product: Omit<CartItem, 'quantity' | 'totalAmount'>) => {
   const currentCart = cart.get();
   const existingItem = currentCart.find(item => item.id === product.id);

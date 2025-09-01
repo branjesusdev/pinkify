@@ -12,6 +12,9 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   integrations: [solid()],
+  experimental: {
+    clientPrerender: true,
+  },
 
   build: {
     inlineStylesheets: 'always',
