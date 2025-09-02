@@ -37,7 +37,7 @@ export default function Highlights() {
             id={product.id}
             title={product.name}
             amount={product.price}
-            image={product.image}
+            image={product.imageUrl}
             type="featured"
             handleAddToCart={() => handleAddToCart(product)}
           />

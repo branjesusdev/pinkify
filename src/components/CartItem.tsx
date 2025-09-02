@@ -24,7 +24,7 @@ export default function CartItem() {
       {$cart()?.map((item) => (
         <li class="flex gap-3 items-center justify-between py-2">
           <img
-            src={item.image}
+            src={item.imageUrl}
             alt={item.name}
             class="w-14 h-14 object-cover rounded-sm"
           />

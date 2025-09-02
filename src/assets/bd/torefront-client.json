@@ -4,82 +4,136 @@
             "id": 1,
             "name": "test",
             "price": 10000,
-            "image": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+            "imageUrl": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
             "description": "Description for Product 1",
             "video": "https://via.placeholder.com/150",
-            "categoryId": 1
+            "categoryId": 1,
+            "discount": 0,
+            "images": [
+                "https://montoccosmetictools.com/cdn/shop/files/POLVOSOFTPOWDER30GR.jpg?v=1742560801&width=1920",
+                "https://montoccosmetictools.com/cdn/shop/products/MG_3609.png?v=1719610398&width=540",
+                "https://montoccosmetictools.com/cdn/shop/files/HIALURONICO2.jpg?v=1710174120&width=540"
+            ]
         },
         {
             "id": 2,
             "name": "Product 2",
             "price": 20000,
-            "image": "https://ame.com.co/cdn/shop/products/LIP-BANG-SWATCH-TONO-01.jpg?v=1626388270&width=1000",
+            "imageUrl": "https://ame.com.co/cdn/shop/products/LIP-BANG-SWATCH-TONO-01.jpg?v=1626388270&width=1000",
             "description": "Description for Product 2",
             "video": "https://via.placeholder.com/150",
-            "categoryId": 2
+            "categoryId": 2,
+            "discount": 0,
+            "images": [
+                "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA2.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA3.jpg?v=1749648932&width=1200"
+            ]
         },
         {
             "id": 3,
             "name": "Product 3",
             "price": 15000,
-            "image": "https://kromaspace.com/wp-content/uploads/2024/09/polvo-mini-lominous-bloomshell-1-1.jpg",
+            "imageUrl": "https://kromaspace.com/wp-content/uploads/2024/09/polvo-mini-lominous-bloomshell-1-1.jpg",
             "description": "Description for Product 2",
             "video": "https://via.placeholder.com/150",
-            "categoryId": 2
+            "categoryId": 2,
+            "discount": 0,
+            "images": [
+                "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA2.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA3.jpg?v=1749648932&width=1200"
+            ]
         },
         {
             "id": 1,
             "name": "test",
             "price": 10000,
-            "image": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+            "imageUrl": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
             "description": "Description for Product 1",
             "video": "https://via.placeholder.com/150",
-            "categoryId": 1
+            "categoryId": 1,
+            "discount": 0,
+            "images": [
+                "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA2.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA3.jpg?v=1749648932&width=1200"
+            ]
         },
         {
             "id": 2,
             "name": "Product 2",
             "price": 20000,
-            "image": "https://ame.com.co/cdn/shop/products/LIP-BANG-SWATCH-TONO-01.jpg?v=1626388270&width=1000",
+            "imageUrl": "https://ame.com.co/cdn/shop/products/LIP-BANG-SWATCH-TONO-01.jpg?v=1626388270&width=1000",
             "description": "Description for Product 2",
             "video": "https://via.placeholder.com/150",
-            "categoryId": 2
+            "categoryId": 2,
+            "discount": 0,
+            "images": [
+                "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA2.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA3.jpg?v=1749648932&width=1200"
+            ]
         },
         {
             "id": 3,
             "name": "Product 3",
             "price": 15000,
-            "image": "https://kromaspace.com/wp-content/uploads/2024/09/polvo-mini-lominous-bloomshell-1-1.jpg",
+            "imageUrl": "https://kromaspace.com/wp-content/uploads/2024/09/polvo-mini-lominous-bloomshell-1-1.jpg",
             "description": "Description for Product 2",
             "video": "https://via.placeholder.com/150",
-            "categoryId": 2
+            "categoryId": 2,
+            "discount": 0,
+            "images": [
+                "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA2.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA3.jpg?v=1749648932&width=1200"
+            ]
         },
         {
             "id": 1,
             "name": "test",
             "price": 10000,
-            "image": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+            "imageUrl": "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
             "description": "Description for Product 1",
             "video": "https://via.placeholder.com/150",
-            "categoryId": 1
+            "categoryId": 1,
+            "discount": 0,
+            "images": [
+                "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA2.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA3.jpg?v=1749648932&width=1200"
+            ]
         },
         {
             "id": 2,
             "name": "Product 2",
             "price": 20000,
-            "image": "https://ame.com.co/cdn/shop/products/LIP-BANG-SWATCH-TONO-01.jpg?v=1626388270&width=1000",
+            "imageUrl": "https://ame.com.co/cdn/shop/products/LIP-BANG-SWATCH-TONO-01.jpg?v=1626388270&width=1000",
             "description": "Description for Product 2",
             "video": "https://via.placeholder.com/150",
-            "categoryId": 2
+            "categoryId": 2,
+            "discount": 0,
+            "images": [
+                "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA2.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA3.jpg?v=1749648932&width=1200"
+            ]
         },
         {
             "id": 3,
             "name": "Product 3",
             "price": 15000,
-            "image": "https://kromaspace.com/wp-content/uploads/2024/09/polvo-mini-lominous-bloomshell-1-1.jpg",
+            "imageUrl": "https://kromaspace.com/wp-content/uploads/2024/09/polvo-mini-lominous-bloomshell-1-1.jpg",
             "description": "Description for Product 2",
             "video": "https://via.placeholder.com/150",
-            "categoryId": 2
+            "categoryId": 2,
+            "discount": 0,
+            "images": [
+                "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA2.jpg?v=1749648932&width=1200",
+                "https://montoccosmetictools.com/cdn/shop/files/LIA3.jpg?v=1749648932&width=1200"
+            ]
         }
     ]
 }

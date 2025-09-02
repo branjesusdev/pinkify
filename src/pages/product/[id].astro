@@ -1,11 +1,13 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import DetailProduct from "@/sections/DetailProduct.astro"
+import Header from "@/sections/Header.astro"
 
 const { id } = Astro.params
 if (!id) return Astro.redirect('/404')
 ---
 
 <Layout >
-    
-  <h1 class="text-3xl font-bold text-center mt-10 text-white z-10 relative">Detalles del Producto {id}</h1>  
+    <Header />
+    <DetailProduct id={id} />
 </Layout>

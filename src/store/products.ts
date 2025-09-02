@@ -13,5 +13,33 @@ export const fetchProducts = async () => {
     filteredProducts.set(data);
   } catch (error) {
     console.error('Failed to fetch products:', error);
+    throw error;
+  }
+};
+
+export const filterProducts = (query: string) => {
+  searchQuery.set(query);
+  if (!query) {
+    filteredProducts.set(products.get());
+    return;
+  }
+  const filtered = products.get().filter((product) =>
+    product.name.toLowerCase().includes(query.toLowerCase())
+  );
+  filteredProducts.set(filtered);
+};
+
+export const filterProductById = async ({ id }: { id: string }) : Promise<Product | null> => {
+
+  console.log(`Fetching product with id: ${id}`);
+
+  try {
+    const response = await fetch(`http://localhost:4321/api/product?id=${id}`);
+    const data: Product = await response.json();
+    return data;
+
+  } catch (error) {
+    console.error('Failed to fetch products:', error);
+    throw error;
   }
 };
