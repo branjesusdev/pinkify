@@ -2,7 +2,7 @@ import { createEffect } from "solid-js";
 import { useStore } from "@nanostores/solid";
 
 import type { Product } from "@/types/product";
-import ProductCart from "@/components/ProductCart";
+import ProductCart from "@/components/ProductCard";
 import { fetchProducts, products } from "@/store/products";
 import { addToCart, toggleSidebar } from "@/store/cart";
 

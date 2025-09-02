@@ -23,12 +23,8 @@
             "description": "Description for Product 2",
             "video": "https://via.placeholder.com/150",
             "categoryId": 2,
-            "discount": 0,
-            "images": [
-                "https://montoccosmetictools.com/cdn/shop/files/LIA.jpg?v=1749648932&width=1200",
-                "https://montoccosmetictools.com/cdn/shop/files/LIA2.jpg?v=1749648932&width=1200",
-                "https://montoccosmetictools.com/cdn/shop/files/LIA3.jpg?v=1749648932&width=1200"
-            ]
+            "discount": 3000,
+            "images": []
         },
         {
             "id": 3,
