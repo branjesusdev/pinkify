@@ -8,15 +8,18 @@ export const prerender = true;
 <nav
   class="w-full h-14 flex items-center justify-between px-6 lg:px-32 xl:px-64 gap-4 shadow-md fixed left-0 top-0 z-50 transition-colors bg-black/40 backdrop-blur-md"
 >
-  <Image
-    class="w-12 h-12"
-    src="/images/logo.webp"
-    alt="Logo"
-    width={40}
-    height={40}
-    inferSize
-    priority
-  />
+  <a href="/" class="flex items-center gap-2 text-2xl font-bold neon-text">
+    <Image
+      class="w-12 h-12"
+      src="/images/logo.webp"
+      alt="Logo"
+      width={40}
+      height={40}
+      inferSize
+      priority
+    />
+    Pinkify
+  </a>
   <button
     id="cart-button"
     class="cursor-pointer relative"

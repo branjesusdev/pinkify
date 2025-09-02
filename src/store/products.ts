@@ -31,10 +31,9 @@ export const filterProducts = (query: string) => {
 
 export const filterProductById = async ({ id }: { id: string }) : Promise<Product | null> => {
 
-  console.log(`Fetching product with id: ${id}`);
-
   try {
-    const response = await fetch(`http://localhost:4321/api/product?id=${id}`);
+    const url = import.meta.env.PUBLIC_SITE_URL;
+    const response = await fetch(`${url}/api/product?id=${id}`);
     const data: Product = await response.json();
     return data;
 

@@ -21,5 +21,5 @@ export default defineConfig({
   },
 
   adapter: vercel(),
-  site: 'https://www.pinkify.app',
+  site: process.env.PUBLIC_SITE_URL,
 });
