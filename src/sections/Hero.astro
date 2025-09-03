@@ -35,3 +35,15 @@ import { Image } from "astro:assets";
     </div>
   </div>
 </section>
+
+<script>
+  import { $$ } from "@/lib/dom-selector";
+  
+  document.addEventListener("astro:page-load", () => {
+    $$('button')?.forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelector('#highlights')?.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+</script>

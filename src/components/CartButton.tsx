@@ -1,12 +1,35 @@
-import { cart, toggleSidebar } from "@/store/cart";
+import { cart, toggleSidebar, cartTotal } from "@/store/cart";
 import { useStore } from "@nanostores/solid";
 import Button from "./ui/Button";
 
 export default function CartButton() {
   const $cart = useStore(cart);
+  const $cartTotal = useStore(cartTotal);
 
   const handleCheckout = () => {
-    console.log("Checkout clicked");
+    
+    const phoneSend = import.meta.env.PUBLIC_PHONE_SEND || ''
+    const products = $cart().map((item) => ({
+      name: item.name,
+      quantity: item.quantity,
+      price: item.price,
+    }));
+
+    const message = `Hola, estoy interesada en estos productos:\n\n${products
+      .map(
+        (product) =>
+          `- ${product.name} (x${product.quantity}): $${product.price}`
+      )
+      .join("\n")}\n\nTotal: $${$cartTotal()}`;
+
+    const urlSend = `https://wa.me/+57${phoneSend}?text=${encodeURIComponent(message)}`;
+
+    console.log(urlSend);
+
+    window.open(
+      urlSend,
+      "_blank"
+    );
   };
 
   const handleContinueShopping = () => {

@@ -1,13 +1,19 @@
-import { cart, incrementQuantity, decrementQuantity } from "@/store/cart";
+import {
+  cart,
+  incrementQuantity,
+  decrementQuantity,
+  removeFromCart,
+} from "@/store/cart";
 import { useStore } from "@nanostores/solid";
 import type { CartItem } from "@/types/cart-item";
-import { createAutoAnimate  } from '@formkit/auto-animate/solid'
+import { createAutoAnimate } from "@formkit/auto-animate/solid";
 import { getAmountFormatted } from "@/lib/utils";
+import { Show } from 'solid-js'
 
 type Props = {};
 
 export default function CartItem() {
-  const [animationParent] = createAutoAnimate()
+  const [animationParent] = createAutoAnimate();
   const $cart = useStore(cart);
 
   const handleIncrement = (product: CartItem) => {
@@ -18,9 +24,16 @@ export default function CartItem() {
     decrementQuantity(product.id);
   };
 
+  const handleRemove = (product: CartItem) => {
+    removeFromCart(product.id);
+  };
+
   return (
     <ul class="mt-4 parent" ref={animationParent}>
-      <h3 class="text-white mb-2">Tienes <strong class="text-green-500">{$cart().length}</strong> productos en tu carrito.</h3>
+      <h3 class="text-white mb-2">
+        Tienes <strong class="text-green-500">{$cart().length}</strong>{" "}
+        productos en tu carrito.
+      </h3>
       {$cart()?.map((item) => (
         <li class="flex gap-3 items-center justify-between py-2">
           <img
@@ -38,7 +51,20 @@ export default function CartItem() {
                 onClick={() => handleDecrement(item)}
               >
                 <span class="sr-only">Decrement</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-icon lucide-minus"><path d="M5 12h14"/></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-minus-icon lucide-minus"
+                >
+                  <path d="M5 12h14" />
+                </svg>
               </button>
               <span class="text-white/90 text-lg"> {item.quantity}</span>
               <button
@@ -48,15 +74,37 @@ export default function CartItem() {
                 onClick={() => handleIncrement(item)}
               >
                 <span class="sr-only">Increment</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus-icon lucide-plus"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-plus-icon lucide-plus"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5v14" />
+                </svg>
               </button>
             </div>
           </div>
-          <span class="text-white">{getAmountFormatted(item.totalAmount)}</span>
+          <div class="flex flex-col items-end">
+            <span class="text-white text-lg">
+              {getAmountFormatted(item.totalAmount)}
+            </span>
+            <button
+              onClick={() => handleRemove(item)}
+              class="text-white/70 underline cursor-pointer bg-transparent text-base"
+            >
+              Eliminar
+            </button>
+          </div>
         </li>
       )) ?? ""}
     </ul>
   );
 }
-
-// si completo el carrito de compras, muestro un mensaje de agradecimiento
