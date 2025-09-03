@@ -17,6 +17,9 @@ export default function ProductCart({ product }: CardProps) {
           data-product-id={product.id}
           data-astro-history="replace"
           data-astro-reload
+          style={{
+            "view-transition-name": `product-${product.id}`
+          }}
         >
           <div class="overflow-hidden rounded-t-lg w-full h-48 lg:h-60">
             <img

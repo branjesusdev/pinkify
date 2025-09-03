@@ -52,7 +52,9 @@ if (!firstImage) throw new Error(`No images found for product ${id}`);
             </div>
           </>
         ) : (
-          <Card class="aspect-square justify-center">
+          <Card class="aspect-square justify-center" style={{
+            "view-transition-name": `product-${product.id}`
+          }}>
             <img
               src={firstImage.src}
               srcset={firstImage.srcSet.attribute}
