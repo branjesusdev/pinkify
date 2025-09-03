@@ -81,12 +81,12 @@ if (!firstImage) throw new Error(`No images found for product ${id}`);
       </h1>
       <p class="text-xl text-primary md:text-2xl">
         <ProductPrice
-          class="gap-3 font-semibold"
+          class="gap-1 font-semibold flex-col"
           price={product.price}
           discount={product.discount}
         />
       </p>
-      <p class="mt-4 text-base text-secondary">
+      <p class="mt-4 text-lg text-white text-balance">
         {product.description}
       </p>
     </header>
